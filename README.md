@@ -22,7 +22,7 @@ to discuss *The Physics of Hip-Hop: Hip-Hop Grimoire* (Amazon 2024).
 - **Anthropic API** — Haiku for bulk scoring, Sonnet for pitch drafts
 - **Firecrawl** — contact-page fallback scraping
 - **Data sources (free only):** Podcast Index API (primary) + iTunes Search (secondary)
-- **Deploy:** Vercel (Railway-compatible)
+- **Deploy:** Netlify (via the official Next.js runtime)
 
 ---
 
@@ -187,7 +187,20 @@ UI guarantees, also verifiable by inspection:
 
 ---
 
-## Deploy
+## Deploy (Netlify)
 
-Deploy to Vercel; set all env vars in the project settings. Run the migration
-against your Supabase project first. The app seeds the campaign on first request.
+1. Run the migration (`supabase/migrations/0001_init.sql`) against your Supabase
+   project first.
+2. Connect the repo to Netlify. `netlify.toml` sets the build command
+   (`npm run build`) and enables `@netlify/plugin-nextjs`, which serves the App
+   Router pages and API route handlers as Netlify Functions automatically.
+3. Set every env var from `.env.local.example` in **Site settings → Environment
+   variables** (the `NEXT_PUBLIC_*` values are exposed to the browser; the
+   service_role key stays server-side).
+4. The app seeds the campaign on first request.
+
+**Function timeouts:** the pipeline routes (`search`, `enrich`, `score`, `draft`)
+can run for a while. Netlify's synchronous function limit is short (~10s on the
+default plan; ~26s on higher tiers), so on smaller runs keep batch `limit`s low,
+or split long steps across multiple calls. The dashboard already runs enrich and
+score in bounded batches for this reason.
