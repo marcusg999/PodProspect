@@ -14,7 +14,8 @@ export async function POST(req: Request) {
     const campaign = await getOrSeedCampaign();
     const sb = getServiceClient();
     const body = await req.json().catch(() => ({}));
-    const limit: number = body.limit ?? 30;
+    // Small default batch so a scoring run stays under Netlify's function cap.
+    const limit: number = body.limit ?? 10;
 
     // Active podcasts only. Never score dormant shows.
     const { data: pods, error } = await sb

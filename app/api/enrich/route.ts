@@ -15,7 +15,9 @@ export async function POST(req: Request) {
   try {
     const sb = getServiceClient();
     const body = await req.json().catch(() => ({}));
-    const limit: number = body.limit ?? 25;
+    // Small default batch — enrich is the slowest step (RSS fetch per feed plus
+    // an optional Firecrawl call) and must fit Netlify's short function timeout.
+    const limit: number = body.limit ?? 8;
 
     // Only enrich podcasts not yet enriched.
     const { data: pods, error } = await sb

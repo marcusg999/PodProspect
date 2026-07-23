@@ -51,8 +51,8 @@ export default function Dashboard() {
 
   const steps = [
     { key: "search", label: "1. Search", desc: "Podcast Index + iTunes for every keyword", url: "/api/search" },
-    { key: "enrich", label: "2. Enrich", desc: "Parse RSS owner email; Firecrawl fallback", url: "/api/enrich", body: { limit: 25 } },
-    { key: "score", label: "3. Score", desc: "Haiku scores active shows for fit", url: "/api/score", body: { limit: 30 } },
+    { key: "enrich", label: "2. Enrich", desc: "Parse RSS owner email; Firecrawl fallback (8/run)", url: "/api/enrich", body: { limit: 8 } },
+    { key: "score", label: "3. Score", desc: "Haiku scores active shows for fit (10/run)", url: "/api/score", body: { limit: 10 } },
     { key: "draft", label: "4. Draft shortlisted", desc: "Sonnet drafts pitches for shortlisted", url: "/api/draft", body: { all: true } },
   ];
 
