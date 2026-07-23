@@ -11,8 +11,7 @@ exports a **shortlist of approved leads as a CSV** for cold outreach via
 > PodProspect's job ends at an approved, exportable CSV.
 
 Seeded campaign: **"The Physics of Hip-Hop"** — pitching Marcus Gray as a guest
-to discuss *The Physics of Hip-Hop: Hip-Hop Grimoire* (Amazon 2024, endorsed by
-Saul Williams).
+to discuss *The Physics of Hip-Hop: Hip-Hop Grimoire* (Amazon 2024).
 
 ---
 

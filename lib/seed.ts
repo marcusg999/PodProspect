@@ -4,15 +4,15 @@ import type { Campaign } from "./types";
 export const SEED_CAMPAIGN = {
   name: "The Physics of Hip-Hop",
   pitch_focus:
-    'Pitching Marcus Gray as a guest to discuss his book "The Physics of Hip-Hop: Hip-Hop Grimoire" (Amazon 2024, endorsed by poet Saul Williams) — hip-hop as consciousness technology, shamanism, and occult practice; 20+ years of research.',
+    'Pitching Marcus Gray as a guest to discuss his book "The Physics of Hip-Hop: Hip-Hop Grimoire" (Amazon 2024) — hip-hop as consciousness technology, shamanism, and occult practice; 20+ years of research.',
   guest_bio:
-    "Marcus Gray is an author and researcher who spent 20+ years studying hip-hop as a spiritual and consciousness technology. His book \"The Physics of Hip-Hop: Hip-Hop Grimoire\" (2024) is endorsed by poet Saul Williams.",
+    "Marcus Gray is an author and researcher who spent 20+ years studying hip-hop as a spiritual and consciousness technology. His book \"The Physics of Hip-Hop: Hip-Hop Grimoire\" was published in 2024.",
   talking_points: [
     "Hip-hop as consciousness technology and a modern shamanic practice",
     "The occult and esoteric roots woven through hip-hop culture",
     "How rhythm, repetition, and rhyme function as manifestation tools",
     "20+ years of research behind the Hip-Hop Grimoire",
-    "Saul Williams' endorsement and the poetry-mysticism lineage",
+    "The poetry-mysticism lineage running through hip-hop",
   ],
   target_keywords: [
     "hip-hop culture",

@@ -81,9 +81,8 @@ export async function draftPitch(
   const prompt = `You write a tailored cold guest-pitch email for a podcast.
 
 GUEST: Marcus Gray, author of "The Physics of Hip-Hop: Hip-Hop Grimoire"
-(Amazon 2024, endorsed by poet Saul Williams). The book frames hip-hop as
-consciousness technology, shamanism, and occult practice, drawn from 20+ years
-of research.
+(Amazon 2024). The book frames hip-hop as consciousness technology, shamanism,
+and occult practice, drawn from 20+ years of research.
 
 CAMPAIGN FOCUS: ${campaign.pitch_focus || ""}
 GUEST BIO: ${campaign.guest_bio || ""}
