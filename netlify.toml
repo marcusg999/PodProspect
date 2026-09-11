@@ -1,0 +1,21 @@
+# Netlify build config for the PodProspect Next.js app.
+# The official Next.js runtime maps App Router pages + route handlers to
+# Netlify Functions automatically — no manual function config needed.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Pipeline route handlers (search / enrich / score / draft) can run long.
+# Netlify's synchronous function cap is short (~10s), so raise it where the
+# plan allows. Adjust or remove if your plan enforces a lower ceiling.
+[functions]
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store"
